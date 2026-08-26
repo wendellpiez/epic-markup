@@ -1,6 +1,12 @@
 # Epic Markup
 
-Epic poetry - Homer's Iliad - with LMNL markup: overlapping hierarchies on an XML/XProc/XSLT/TEI platform
+**Epic poetry - Including Homer's *Iliad* - with LMNL markup:** OVERLAPPING HIERARCHIES enabled by XML, TEI, XSLT, iXML and XProc
+
+Epic poetry is defined here broadly, to overlap related forms such as tragedy, melodrama, romance and satire. The focus here is on examples of epic as literary works that benefit from this approach to text encoding.
+
+Two distinctions of epic as a literary genre are its universal scope (even when paradoxically narrow) and its use of a narrative voice or persona. Any such definitional categories can be the subject of research and testing (indeed, using text encoding technologies), and the point here is not to define or distinguish epic so much as explore it.
+
+The developer is eager to hear of other epics, and of other works more broadly, to which LMNL may be usefully applied. The world is vast. 
 
 <details><summary>What is LMNL</summary>
 LMNL is the Layered Markup and Annotation Language, which defines a markup syntax and a data model designed to support data processing over text (expressed in Unicode).
@@ -26,13 +32,43 @@ More information about LMNL, with more examples, can be found in the [Laminator 
 
 </details>
 
-This repository holds several editions of Homer's *Iliad* all sharing a common source, the PerseusDL encoding of the Monro and Allen OUP edition.
+## Dependencies and prerequisites
+
+Internal plumbing relies heavily (entirely) on XProc, XSLT and XPath. This is your chance to see them in action.
+
+This means no Javascript outside of a little client code isolated in HTML files. No framework, no live back end.
+
+Running XProc requires an XProc engine supporting an iXML parser. Both XML Calabash and Morgana XProcIIIse have been used successfully with the pipelines in this repository.
+
+You should feel comfortable running a capable XProc engine (from the command line or coding platform). If you are not, keep in mind that most people who can do this started by watching someone else, so ask for help.
+
+Similarly, you need `git` skills good enough to acquire a copy of the repository with its git submodule.
+
+XSLT sounds scary but if you know what you are doing it is an incredible power tool. The size of the codebase alone speaks to its efficency as well as its power.
+
+## Iliad
+
+This repository holds several variant renditions of Homer's *Iliad*. As a rule they all share a common source, the PerseusDL encoding of the Monro and Allen OUP edition.
 
 [LMNL encoded versions of the data](data/Iliad/lmnl/) intend to show a little of what can be done with a markup tagging syntax that *permits overlap*, and markup languages enabled by such a syntax, for research into epic poetry, and by implication, into much else.
 
 *Winged words*: Some preliminary research results can be seen in the [data/Iliad/rangemaps](data/Iliad/rangemaps) folder.
 
 Planned: some project results will be published on the developer's [Raven Tracks portal](https://raventracks.org) alongside other resources and projects.
+
+## Other works
+
+See the [data folder](./data/) for other works in progress as well, documented in place. The intent is to create these as relatively self-contained units even while the Homer work continues.
+
+### Milton, *Paradise Lost*
+
+*Paradise Lost* with its verse enjambments has always been a favorite example for illustrating overlapping phenomena.
+
+Book I is provided here with conversion pipelines producing LMNL from an EPUB source (Public Domain Wikidata file). The EPUB encoding is discarded and the conversion works from plain text.
+
+This demonstrates the production of LMNL data with multiple concurrent hierarchies (MCH) expressed as overlapping ranges, while not speaking to the question of **modeling** this text.
+
+Nonetheless even without formalizing a model, we can see useful results.
 
 ## Cloning the repository
 
@@ -41,19 +77,6 @@ To run the processes for yourself: all the pipelines in the repository have succ
 This project uses the Laminator for LMNL processing (see below), installed in the [`lib` folder](./lib/).
 
 It is set up as a git submodule, so it requires initialization and update for the repository runtimes to work: see git documentation on initializing (`git submodule init`) and updating (`git submodule update --remote`).
-
-## Quick way in
-
-We need to build an approach to the material that requires no prior knowledge of markup, just as no prior knowledge of Greek should be required to appreciate Homer (at least if read out loud or translated).
-
-For EpicMarkup as a whole, this might mean prioritizing an EpicMarkup version of Virgil (Aeneid), Dante, or Milton as more accessible for newcomers.
-
-Likewise, fighting old battles over markup syntax is not interesting. The newcomer needs only to know:
-
-- LMNL is like XML only slippery
-- Because it is slippery, *exploratory markup* with *late bindings to schemata* (meaning not only formal schemas but also ad-hoc pattern testing) become feasible.
-
-
 
 ## Namespaces
 
@@ -67,18 +90,9 @@ xmlns:EPIC="https://github.com/wendellpiez/EpicMarkup/ns"
 
 Caveat Proscriptor!
 
-## 
-## Coming attractions
+## Hall of Fame
 
-- [x] XProc pipeline to acquire and archive a copy of the open-source PerseusDL TEI Iliad (edition of Monro and Allen, encoded by Crane et al.)
-- [x] XProc pipeline to convert the TEI XML to LMNL
-- [x] *Iliad*, encoded in LMNL "sawtooth" syntax ("PerseusDL TEI LMNL")
-- [ ] A design for MYTHOI tagging (TEI or TEI-ish tagging of narrative and rhetorical structures)
-- [ ] An enhanced version of the epic, also in LMNL, using MYTHOI tagging
-     - Books 1 and 2 so far 
-- [ ] Αn XProc pipeline for producing TEI XML from LMNL (MYTHOI, TEI or other)
-- [x] An Xproc pipeline for producing 'Range Map' visual renditions of the epic and its parts
-- [ ] (Maybe) an XProc pipeline for producing a dynamic *Iliad Illuminated* web publication
+[Another page](halloffame.md) represents a best effort at collecting some links for the student of epic poetry and especially Homer.
 
 ## XProc 3.0
 
@@ -98,24 +112,17 @@ When thinking about the Laminator, set aside thoughts of protective sheets of pl
 
 If you have gotten this far, possibly you will be intrigued to know you can work with LMNL natively in a text editor with some dedicated tooling and syntax coloring. See the [Laminator `lib` directory](lib/Laminator/lib/Textpad/) for more details.
 
-## Further reading
-
-By the developer, see especially the [RavenTracks project](https://raventracks.org) where I am publishing Homer study materials.
-
-In general, the field is growing and changing at such a rate that open searches are necessary even if we start from a page of links.
-
-One such resource is the [Digital Classicist Wiki](https://wiki.digitalclassicist.org/Main_Page).
-
 ## Acknowledgements
 
 This work builds on foundations laid by others:
 
 - Perseus project and contributors - for PerseusDL source data
+- Other OSS projects and resources, for example WikiData and Wikimedia Commons
 - XProc developers and community
 - TEI developers and community
 - iXML developers and community
 
-It is dedicated to everyone who believed in LMNL and everyone who has thoughtfully challenged it, with grateful thanks, as well as to the memory of that Titan of Markup, C. Michael Sperberg-McQueen.
+It is dedicated to everyone who believed in LMNL and everyone who has thoughtfully challenged it, with grateful thanks, as well as to the memory of that titan of Markup, C. Michael Sperberg-McQueen.
 
 
 ---
