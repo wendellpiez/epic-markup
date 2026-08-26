@@ -213,7 +213,7 @@ does not deliver perfect results. But the results are also easily corrigible.
   <!-- We have LAYERS, we can have xMNML and tags too -->
   <mnml:layers-xMNML-build name="xMNML_build"/>
 
-  <p:store use-when="$caching" href="../data/ParadiseLost/{ $cache-dir }/book01_UNIFIED-LAYER.xml"
+  <p:store use-when="$caching" href="../data/ParadiseLost/{ $cache-dir }/book01_UNIFIED-xMNML.xml"
     serialization="map { 'indent': true() }"
     message="STORING ../data/ParadiseLost/{ $cache-dir }/book01_UNIFIED-xMNML.xml"/>
 
