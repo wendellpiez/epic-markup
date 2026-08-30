@@ -14,7 +14,7 @@
     
   -->
   
-  <p:import href="src/epic-markup.xpl"/>
+  <p:import href="Iliad/epic-markup.xpl"/>
 
   <!-- Use pipeline ../Sources/ACQUIRE_PerseusDL-TEI.xpl to acquire a copy -->
   <p:input port="source" href="../Sources/PerseusDL/tlg0012.tlg001.perseus-grc2.xml"/>
@@ -60,7 +60,7 @@
 
   <p:xslt>
     <p:with-input port="source" pipe="result@PerseusDL-TEI"/>
-    <p:with-input port="stylesheet" href="src/perseus-Iliad-fixup.xsl"/>
+    <p:with-input port="stylesheet" href="Iliad/perseus-Iliad-fixup.xsl"/>
   </p:xslt>
   
   <!-- Result is comparable not to LMNL but to the original input -->
@@ -68,12 +68,12 @@
   
   <!-- Further tailored modifications for this data -->
   <p:xslt name="adjusted">
-    <p:with-input port="stylesheet" href="src/perseus_Iliad-adjust.xsl"/>
+    <p:with-input port="stylesheet" href="Iliad/perseus_Iliad-adjust.xsl"/>
   </p:xslt>
   
   <!-- Writing LMNL notation now -->
   <p:xslt>
-    <p:with-input port="stylesheet" href="src/adjustedIliad-to-sawteeth.xsl"/>
+    <p:with-input port="stylesheet" href="Iliad/adjustedIliad-to-sawteeth.xsl"/>
   </p:xslt>
 
   <!-- Full text, in LMNL -->
@@ -85,7 +85,7 @@
     <p:variable name="book00" select="p:iteration-position() => format-number('00')"/>
     
     <p:xslt>
-      <p:with-input port="stylesheet" href="src/adjustedIliad-to-sawteeth.xsl"/>
+      <p:with-input port="stylesheet" href="Iliad/adjustedIliad-to-sawteeth.xsl"/>
     </p:xslt>
     <EPIC:store href="../data/Iliad/lmnl/generated/enhanced/book{ $book00 }.lmnl" hint="LMNL, with enhancements"/>
   </p:for-each>

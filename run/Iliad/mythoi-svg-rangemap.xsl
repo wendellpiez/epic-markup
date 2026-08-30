@@ -127,7 +127,7 @@
     <xsl:apply-templates select="." mode="label"/>
   </xsl:template>
   
-  <xsl:template mode="draw" match="range[@gi=('list','entry')]" priority="11" name="band">
+  <xsl:template mode="draw" match="range[@gi=('assembly','force')]" priority="11" name="band">
     <xsl:param name="placement" as="map(*)" tunnel="true"/>
     <xsl:variable name="strokeWeight" select="0.01 * $placement?height"/>
     <xsl:variable name="w" select="$placement?height * $aspect"/>
@@ -173,7 +173,7 @@
   </xsl:template>
   
   
-  <xsl:template mode="draw" match="range[@gi=('speech','simile','prolepsis','prayer')]" priority="11" name="wings">
+  <xsl:template mode="draw" match="range[@gi=('speech','simile','trope','prayer')]" priority="11" name="wings">
     <xsl:param name="placement" as="map(*)" tunnel="true"/>
     <xsl:variable name="centerX" select="($placement?x1 + $placement?x2) div 2"/>
     <xsl:variable name="centerY" select="($placement?y1 + $placement?y2) div 2"/>
@@ -217,7 +217,7 @@
     <xsl:attribute name="stroke">darkred</xsl:attribute>
   </xsl:template>
   
-  <xsl:template match="ml:range[@gi='prolepsis']" mode="decorate" expand-text="true">
+  <xsl:template match="ml:range[@gi='trope']" mode="decorate" expand-text="true">
     <xsl:attribute name="text-anchor">end</xsl:attribute>
     <xsl:attribute name="fill">steelblue</xsl:attribute>
     <xsl:attribute name="stroke">purple</xsl:attribute>
@@ -233,7 +233,7 @@
     <xsl:attribute name="stroke">darkgreen</xsl:attribute>
   </xsl:template>
   
-  <xsl:template match="ml:range[@gi='list']" mode="decorate" expand-text="true">
+  <xsl:template match="ml:range[@gi='assembly']" mode="decorate" expand-text="true">
     <xsl:attribute name="text-anchor">end</xsl:attribute>
     <xsl:attribute name="fill">rosybrown</xsl:attribute>
     <xsl:attribute name="stroke">black</xsl:attribute>
@@ -244,8 +244,6 @@
   
   <xsl:template match="*" mode="label" expand-text="true">
     <xsl:param name="placement" as="map(*)" tunnel="true"/>
-    <!--<xsl:variable name="centerX" select="($placement?x1 + $placement?x2) div 2"/>-->
-    <!--<xsl:variable name="centerY" select="($placement?y1 + $placement?y2) div 2"/>-->
     <xsl:variable name="fontSize">
         <xsl:apply-templates select="." mode="label-size"/>
     </xsl:variable>
@@ -271,13 +269,13 @@
   </xsl:template>
   
   <!-- Simile labels always 20 despite how big or small -->
-  <xsl:template mode="label-size" expand-text="true" match="ml:range[@gi=('simile','prolepsis')]">20</xsl:template>
+  <xsl:template mode="label-size" expand-text="true" match="ml:range[@gi=('simile','trope')]">20</xsl:template>
   
   <xsl:template match="*" mode="label-text" expand-text="true">
     <xsl:text>{ @gi }</xsl:text>
   </xsl:template>
   
-  <xsl:template match="range[@gi=('simile','prolepsis')]" mode="label-text" expand-text="true">
+  <xsl:template match="range[@gi=('simile','trope')]" mode="label-text" expand-text="true">
     <xsl:attribute name="font-style">italic</xsl:attribute>
     <xsl:next-match/>
   </xsl:template>
@@ -288,12 +286,12 @@
     <xsl:text>Book { child::annotation[@gi='n'] }</xsl:text>
   </xsl:template>
   
-  <xsl:template match="range[@gi='list']" mode="label-text" expand-text="true">
+  <xsl:template match="range[@gi='assembly']" mode="label-text" expand-text="true">
     <xsl:attribute name="font-weight">bold</xsl:attribute>
-    <xsl:text>{ (child::annotation[@gi='title'],'List') => head() }</xsl:text>
+    <xsl:text>{ (child::annotation[@gi=('who','name','title')],'Assembly') => head() }</xsl:text>
   </xsl:template>
   
-  <xsl:template match="range[@gi='entry'] | range[@gi='tale']" mode="label-text" expand-text="true"/>
+  <xsl:template match="range[@gi='force'] | range[@gi='tale']" mode="label-text" expand-text="true"/>
     
   <xsl:template match="range[@gi='speech']" mode="label-text" expand-text="true">
     <xsl:attribute name="font-weight">bold</xsl:attribute>

@@ -10,8 +10,8 @@
     
     This XSLT is meant to be used on verse or at any rate on texts marked with 'line' ranges! -->
 
-  <!-- 'quote' -->
-  <xsl:param name="ranges" select="'quote'"/>
+  <!-- Override with strings for different range types -->
+  <xsl:param name="ranges" select="'quote'" as="xs:string*"/>
 
   <xsl:key name="text-for-range" match="text" use="tokenize(@cf, '\s+')"/>
 
@@ -23,7 +23,6 @@
     </REPORT>
   </xsl:template>
 
-  <!-- Hard coded for Paradise Lost example -->
   <xsl:template match="start" expand-text="true">
     <!-- $ll is all 'l' ranges covered by text in this range -->
     <xsl:variable name="lines"

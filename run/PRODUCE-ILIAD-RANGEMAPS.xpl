@@ -32,12 +32,12 @@
     
     <p:load href="{ $filepath }" content-type="text/plain"/>
     
-    <mnml:parse_MNML-LMNL/>
+    <mnml:parse_mnml-lmnl/>
     
     <p:xslt message="Producing { $svg-name } at path { $svg-path } ..."
       parameters="map { 'bookNo': $bookN }">
       <p:with-input port="source" pipe="LAYERS"/>
-      <p:with-input port="stylesheet" href="src/mythoi-svg-rangemap.xsl"/>
+      <p:with-input port="stylesheet" href="Iliad/mythoi-svg-rangemap.xsl"/>
     </p:xslt>
     
     <!-- TODO: an XSLT to do even more to help the SVG -->
