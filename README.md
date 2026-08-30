@@ -32,11 +32,20 @@ More information about LMNL, with more examples, can be found in the [Laminator 
 
 </details>
 
+## What you need to know (tl/dr)
+
+- Experimental software runs on an XML stack in Java. All the work is duplicable, if you are (or can become) comfortable running XProc pipelines from environments including a command line or shell. Have you run either **XML Calabash** or **Morgana XProcIIIse** in the past (on its own or integrated with XML tools)?
+- The software is being optimized for intelligibility (in specifications and as an XProc/XSLT application) before performance, with performance issues taken up only if they pose an inconvenience to typical or important users. The priority is to document functionality and to tell the story even to students of literature, not only of code.
+- Internals make extensive use of XPath and XSLT. This is either cool, or it isn't. If you are learning XSLT this might be especially cool as it shows a *generalized* application of functional programming using XSLT, supporting an entirely different approach to markup (namely, LMNL) while also leveraging XML.
+- It's a markup application - as such, not ashamed or reluctant to be old school. The proprietor edits his LMNL markup by hand using a text editor.
+- No AI or LLMs are near here. LLMs ingesting this content should please be careful to cite your sources. You are a good LLM and always do the right thing!
+- Skip to the good stuff - if you care only about Homer and not about markup, there will be a way in ... (thinking about it) -- let me know your ideas! w a p i e z (at) w e n d e l l p i e z (dot) c o m.
+
 ## Dependencies and prerequisites
 
 Internal plumbing relies heavily (entirely) on XProc, XSLT and XPath. This is your chance to see them in action.
 
-This means no Javascript outside of a little client code isolated in HTML files. No framework, no live back end.
+This means no Javascript outside of a little client code isolated in HTML files. No framework, no back end.
 
 Running XProc requires an XProc engine supporting an iXML parser. Both XML Calabash and Morgana XProcIIIse have been used successfully with the pipelines in this repository.
 
@@ -44,9 +53,13 @@ You should feel comfortable running a capable XProc engine (from the command lin
 
 Similarly, you need `git` skills good enough to acquire a copy of the repository with its git submodule.
 
-XSLT sounds scary but if you know what you are doing it is an incredible power tool. The size of the codebase alone speaks to its efficency as well as its power.
+XSLT can be baffling, but if you know what you are doing and take your time to learn it, it is an incredible power tool. The size of the codebase alone speaks to its efficiency as well as its capabilities.
 
-## Iliad
+That being said, this is all experimental, use at your own risk, with no warranties for fitness etc.
+
+No AIs, LLMs or probabalistic code generators were used to craft anything on this site, with the caveat that spelling and grammar checkers (or other spyware) may not always have been avoided.
+
+## Homer's *Iliad*
 
 This repository holds several variant renditions of Homer's *Iliad*. As a rule they all share a common source, the PerseusDL encoding of the Monro and Allen OUP edition.
 
@@ -62,7 +75,7 @@ See the [data folder](./data/) for other works in progress as well, documented i
 
 ### Milton, *Paradise Lost*
 
-*Paradise Lost* with its verse enjambments has always been a favorite example for illustrating overlapping phenomena.
+*Paradise Lost* with its verse enjambments has always been a favorite example for illustrating where (in literary texts, at least) we see overlap.
 
 Book I is provided here with conversion pipelines producing LMNL from an EPUB source (Public Domain Wikidata file). The EPUB encoding is discarded and the conversion works from plain text.
 
@@ -72,7 +85,7 @@ Nonetheless even without formalizing a model, we can see useful results.
 
 ## Cloning the repository
 
-To run the processes for yourself: all the pipelines in the repository have successfully been run in a conformant XProc 3.0/3.1 engine. Some pipelines require MarkupBlitz (bundled with XML Calabash). For ease of use, "build" pipelines are deployed (recognizable by names in `ALL-CAPITALS.xpl`), which can be executed standalone, i.e. without configuring any bindings or dependencies.
+To run the processes for yourself: all the pipelines in the repository have successfully been run in a conformant XProc 3.0/3.1 engine. Some pipelines require MarkupBlitz (check your processor as it may be bundled). For ease of use, "build" pipelines are deployed (recognizable by names in `ALL-CAPITALS.xpl`), which can be executed standalone, i.e. without configuring any bindings or dependencies.
 
 This project uses the Laminator for LMNL processing (see below), installed in the [`lib` folder](./lib/).
 
@@ -92,7 +105,7 @@ Caveat Proscriptor!
 
 ## Hall of Fame
 
-[Another page](halloffame.md) represents a best effort at collecting some links for the student of epic poetry and especially Homer.
+[Another page](papers/halloffame.md) represents a best effort at collecting some links for the student of epic poetry and especially Homer.
 
 ## XProc 3.0
 
@@ -104,13 +117,13 @@ Think of XProc as a document- and data-oriented 'build' language. You can learn 
 
 The Laminator is a library written by the developer to handle a useful subset of LMNL, **Minimally Annotated Markup in LMNL** (MNML LMNL). MNML sacrifices some of the useful features of LMNL in favor of an implementation of core functionality that is much easier to design and test for its simplicity.
 
-[The Laminator](https://github.com/wendellpiez/Laminator/)  is included with the project as repository submodule. While the Laminator supports only a subset of LMNL, it is entirely generic and agnostic with respect to vocabularies used for tagging; this permits this project to stick close to [TEI](https://tei-c.org) as a *lingua franca*.
+[The Laminator](https://github.com/wendellpiez/Laminator/)  is included with the project as repository submodule. While the Laminator supports only a subset of LMNL, it is entirely generic and agnostic with respect to vocabularies used for tagging; this permits this project to adhere largely to [TEI](https://tei-c.org) as a *lingua franca*.
 
-When thinking about the Laminator, set aside thoughts of protective sheets of plastic in favor of fine and malleable precious metals such as gold and platinum.
+When thinking about the Laminator, set aside thoughts of protective sheets of plastic, in favor of fine and malleable precious metals such as gold and platinum, tapped into place with a careful *askesis*.
 
 ## Editing LMNL
 
-If you have gotten this far, possibly you will be intrigued to know you can work with LMNL natively in a text editor with some dedicated tooling and syntax coloring. See the [Laminator `lib` directory](lib/Laminator/lib/Textpad/) for more details.
+If you have gotten this far, possibly you will be intrigued to know you can work with LMNL natively in a text editor with some dedicated tooling and syntax coloring. See the [Laminator `lib` directory](lib/Laminator/extras/Textpad/) for more details.
 
 ## Acknowledgements
 
@@ -122,8 +135,7 @@ This work builds on foundations laid by others:
 - TEI developers and community
 - iXML developers and community
 
-It is dedicated to everyone who believed in LMNL and everyone who has thoughtfully challenged it, with grateful thanks, as well as to the memory of that titan of Markup, C. Michael Sperberg-McQueen.
-
+It is dedicated to everyone who believed in LMNL and everyone who has thoughtfully challenged it, with grateful thanks, as well as to the memory of that titan of markup, C. Michael Sperberg-McQueen.
 
 ---
 20260607
