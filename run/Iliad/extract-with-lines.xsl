@@ -33,7 +33,9 @@
     <xsl:element name="{ @gi }" namespace="http://wendellpiez.com/ns/xMNML">
       <!-- we add @l for a single line, @ll for a range of lines -->
       <xsl:attribute name="l{$lines[2]/'l'}" select="$where"/>
-      <xsl:attribute name="who" select="annotation[@gi='who']"/>
+      <xsl:for-each-group select="annotation" group-by="@gi">
+        <xsl:attribute name="{ current-grouping-key() }" select="current-group() => string-join(' ')"/>  
+      </xsl:for-each-group>      
       <xsl:text>{ key('text-for-range',@rID) => string-join() => replace('&#xA;',' / ') }</xsl:text>
     </xsl:element>
   </xsl:template>

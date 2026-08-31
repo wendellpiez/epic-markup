@@ -18,6 +18,8 @@ Perseus Digital Library at https://github.com/PerseusDL.
 
 Homer Multitext Project
 
+Chicago Homer - https://homer.library.northwestern.edu/
+
 ### English translations on the open web
 
 Transcribed from public domain sources.
@@ -30,14 +32,14 @@ Transcribed from public domain sources.
 
 ### Assisted readers and web-based study platforms.
 
-These appear to be reliable albeit with occasional shortcomings, inevitable given the nascent state of the art.
+These appear to be reliable albeit with occasional shortcomings.
 
 - Scaife Reader I.1-7: https://scaife.perseus.org/reader/urn:cts:greekLit:tlg0012.tlg001.perseus-grc2:1.1-1.7/
 - Alpheios I.1-30 https://texts.alpheios.net/text/urn:cts:greekLit:tlg0012.tlg001.alpheios-text-grc1/passage/1.1-1.30
 
 - Homer Multitext MS Reader https://www.homermultitext.org/iliad-browser/
 
-The developer's own [ILIAD Elucidated](https://raventracks.org/#elucidated_iliad) is also an assisted reader, with a difference -- there is no back end, just a page for each book, which can be cached and saved.
+The developer's [ILIAD Elucidated](https://raventracks.org/#elucidated_iliad) is also an assisted reader, with a difference -- there is no back end, just a page for each book, which can be cached and saved.
 
 ### Wall of shame
 
@@ -45,7 +47,7 @@ The [Wall of Shame](wallofshame.md) page is not saved in the repository, but lis
 
 ## Milton
 
-Open-source transcriptions of Paradise Lost (and all Milton's poetry) are ubiquitous on the Internet, being easy to produce, and in the public domain.
+No links to Milton materials need to be given here, as open-source transcriptions of Paradise Lost (and all Milton's poetry) are ubiquitous on the Internet, being easy to produce, and in the public domain.
 
 Wikimedia Commons has page images of the 1674 (2nd) edition of *Paradise Lost*: commons.wikimedia.org/w/index.php?title=File:Paradise_Lost_1674.pdf
 
@@ -55,5 +57,4 @@ By the developer, see especially the [RavenTracks project](https://raventracks.o
 
 In general, the field is growing and changing at such a rate that open searches are necessary even if we start from a page of links.
 
-One such resource is the [Digital Classicist Wiki](https://wiki.digitalclassicist.org/Main_Page).
-
+One such resource is. or has been, the [Digital Classicist Wiki](https://wiki.digitalclassicist.org/Main_Page).
