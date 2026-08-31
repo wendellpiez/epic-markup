@@ -39,7 +39,7 @@
          </langUsage>
       </profileDesc>
       <revisionDesc>
-         <change who="Wendell Piez" when="2026-08-28">Transcoded into LMNL syntax</change>
+         <change who="Wendell Piez" when="2026-08-30">Transcoded into LMNL syntax</change>
          <change who="Lisa Cerrato" when="2016-09-20">added missing info in header; reviewed quotes</change>
          <change who="Gregory Crane" when="2016-09-19">reviewed and fixed quote tags</change>
          <change who="Bridget Almas" when="2014-07-18T00:00:00Z">Derived EpiDoc version from

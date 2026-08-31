@@ -25,7 +25,7 @@
 
     <mnml:sawteeth-to-xMNML name="xMNML"/>
     <p:xslt parameters="map { 'ranges': tokenize($range-types,'\s+') }">
-      <p:with-input port="stylesheet" href="ParadiseLost/extract-with-lines.xsl"/>
+      <p:with-input port="stylesheet" href="Iliad/extract-with-lines.xsl"/>
     </p:xslt>
   </p:declare-step>
 
